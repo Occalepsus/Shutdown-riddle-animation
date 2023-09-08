@@ -116,34 +116,31 @@ body {
         color: black;
       }
 
-      span::after {
-        content: " ";
-      }
+      // span::after {
+      //   content: " ";
+      // }
 
-      &.active {
-        span::after {
-          content: "-";
+      &.active span {
+        // content: "-";
 
-          animation: blinker 1s linear infinite;
+        animation: blinker 1s linear infinite;
 
-          @keyframes blinker {
-            50% {
-              opacity: 0;
-            }
+        @keyframes blinker {
+          50% {
+            opacity: 0;
           }
-        }
+      }
       }
 
-      &.selected {
-        span::after {
-          content: "x";
+      &.selected span {
+        // content: "x";
+        text-decoration: line-through;
 
-          animation: appear 1s linear;
+        animation: appear 1s linear;
 
-          @keyframes appear {
-            0% {
-              opacity: 0%;
-            }
+        @keyframes appear {
+          0% {
+            opacity: 0%;
           }
         }
       }

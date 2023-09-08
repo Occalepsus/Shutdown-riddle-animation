@@ -7,12 +7,28 @@ const attempts = document.getElementById("attempts");
 let fail = false;
 let idx = 0;
 
-Array.prototype.forEach.call(buttons, (button) => {
-  button.addEventListener("click", () => {
-    console.log("clicked on ", button.id);
-    testButton(button);
-  });
-});
+document.addEventListener("keyup", (e) => {
+  console.log(e.key + " was pressed");
+  if (e.key === "1" || e.key === "&") {
+    testButton(buttons[0]);
+  }
+  if (e.key === "2" || e.key === "é") {
+    testButton(buttons[1]);
+  }
+  if (e.key === "3" || e.key === "\"") {
+    testButton(buttons[2]);
+  }
+  if (e.key === "4" || e.key === "'") {
+    testButton(buttons[3]);
+  }
+})
+
+// Array.prototype.forEach.call(buttons, (button) => {
+//   button.addEventListener("click", () => {
+//     console.log("clicked on ", button.id);
+//     testButton(button);
+//   });
+// });
 
 const error = () => {
   fail = false;
@@ -48,7 +64,7 @@ const testButton = (button) => {
 };
 
 const newAttempt = () => {
-  if (attempts.innerHTML === "0") {
+  if (attempts.innerHTML === "1") {
     let blackOut = document.createElement("div");
     blackOut.id = "black-out";
     document.body.appendChild(blackOut);
