@@ -103,9 +103,34 @@ const newAttempt = () => {
         // Si on a gagné
         if (idx === 4) {
           clearInterval(timer);
-          let won = document.createElement("div");
-          won.id = "won";
-          document.body.appendChild(won);
+          let counter = document.createElement("div");
+
+          let counterText = document.createElement("p");
+          counterText.innerText = "\nShutdown in ";
+          
+          let counterSpan = document.createElement("span");
+          counterSpan.className = "counter";
+          c = 10;
+          counterSpan.innerText = c;
+          endTimer = setInterval(() => {
+            counterSpan.innerText = --c;
+            if (c == 0) {
+              shutdownText = document.createElement("p");
+              shutdownText.className = "line-jump";
+              shutdownText.innerText = "intelli_bird shutdown..."
+              counter.appendChild(shutdownText);
+            }
+            if (c < 0) {
+              won = document.createElement("div");
+              won.id = "won";
+              document.body.appendChild(won);
+              clearInterval(endTimer);
+            }
+          }, 1400);
+
+          counterText.appendChild(counterSpan);
+          counter.appendChild(counterText);
+          document.getElementById("screen").appendChild(counter);
         }
         // Sinon on continue
         else {

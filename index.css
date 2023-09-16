@@ -88,12 +88,6 @@ body {
   display: flex;
   justify-content: space-around;
 }
-.screen .buttons .button:hover {
-  cursor: pointer;
-  background-color: #55c055;
-  /*box-shadow: 0px 0px 12px #80a080;*/
-  color: black;
-}
 .screen .buttons .button.active span {
   animation: blinker 1s linear infinite;
 }
@@ -110,6 +104,9 @@ body {
   0% {
     opacity: 0%;
   }
+}
+.screen span.counter {
+  animation: appear 0.7s ease-out infinite alternate;
 }
 
 #black-out {

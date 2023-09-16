@@ -109,12 +109,12 @@ body {
     justify-content: space-around;
 
     .button {
-      &:hover {
-        cursor: pointer;
-        background-color: #55c055;
-        /*box-shadow: 0px 0px 12px #80a080;*/
-        color: black;
-      }
+      // &:hover {
+      //   cursor: pointer;
+      //   background-color: #55c055;
+      //   /*box-shadow: 0px 0px 12px #80a080;*/
+      //   color: black;
+      // }
 
       // span::after {
       //   content: " ";
@@ -145,6 +145,10 @@ body {
         }
       }
     }
+  }
+
+  span.counter {
+    animation: appear 0.7s ease-out infinite alternate;
   }
 }
 
